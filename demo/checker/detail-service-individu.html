@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>Layanan — Merchant Portal</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="../../css/styles.min.css" rel="stylesheet" />
+    <script src="../../js/app.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar-custom navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="../../img/logo-fello-merchant-black.svg"
+            alt="fello merchant logo"
+          />
+        </a>
+        <button
+          class="btn btn-link p-0"
+          data-toggle="sidebar"
+          data-target="#sidebar-dashboard"
+        >
+          <img src="../../img/ic-menu-bar.svg" alt="icon menu" />
+        </button>
+      </div>
+    </nav>
+    <aside id="sidebar-dashboard" class="sidebar">
+      <div class="sidebar-group">
+        <div class="sidebar-header">
+          <div class="header-logo">
+            <img src="../../img/logo-fello-merchant-black.svg" alt="logo" />
+          </div>
+          <div class="header-account">
+            <img
+              src="../../img/logo-brand.svg"
+              class="account-logo"
+              alt="logo brand"
+            />
+            <div class="account-content">
+              <h5 class="account-name">Operations Staff</h5>
+              <h5 class="account-id">User ID - 14440310152001</h5>
+            </div>
+          </div>
+          <div class="menu-notification">
+            <a href="notification.html" class="">
+              <div class="menu-notification-group">
+                <span class="icon-menu ic-notification"></span>
+                <span>Notifikasi</span>
+              </div>
+              <div class="menu-notification-badge">1</div>
+            </a>
+          </div>
+        </div>
+        <div class="sidebar-body">
+          <ul id="sidebarMenu" class="sidebar-menu-group">
+            <li class="menu-item">
+              <a href="home.html">
+                <span class="icon-menu ic-home"></span>
+                <span>Home</span>
+              </a>
+            </li>
+            <ul class="menu-item item-group">
+              <li class="menu-item">
+                <a href="data-merchant.html">
+                  <span class="icon-menu ic-merchant"></span>
+                  <span>Data Merchant</span>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="data-transaction.html">
+                  <span class="icon-menu ic-report"></span>
+                  <span>Data Transaksi</span>
+                </a>
+              </li>
+            </ul>
+          </ul>
+        </div>
+      </div>
+      <div class="sidebar-footer">
+        <div class="sidebar-footer-group">
+          <h5 class="account-user">Kenes Hakim</h5>
+          <span class="account-role">Checker</span>
+        </div>
+        <div class="btn-group dropup">
+          <button
+            type="button"
+            class="btn"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img src="../../img/ic-dot-vertical.svg" alt="icon dot" />
+          </button>
+          <ul class="dropdown-menu dropdown-account-footer">
+            <li>
+              <a class="dropdown-item" href="user-profile.html">
+                <img src="../../img/ic-profile.svg" alt="profile" />
+                Profil Saya
+              </a>
+            </li>
+            <div class="divider"></div>
+            <li>
+              <a class="dropdown-item" href="#">
+                <img src="../../img/ic-logout-sm.svg" alt="logout" />
+                Keluar
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main bg-soft-white">
+      <div class="content">
+        <div class="content-header">
+          <h1 class="header-title">Layanan</h1>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb with-arrow">
+              <li class="breadcrumb-item">
+                <a href="data-merchant.html">Data Merchant</a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="data-information-individu.html">Informasi Merchant</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Layanan
+              </li>
+            </ol>
+          </nav>
+        </div>
+        <div class="content-body">
+          <div class="card mb-4">
+            <div class="card-body p-0">
+              <div class="list-group border-0">
+                <div class="list-group-item border-0">
+                  <div
+                    class="d-flex align-items-center justify-content-between"
+                  >
+                    <div class="d-flex flex-fill">
+                      <p class="fs-6 fw-bold text-neutral-100">
+                        QRIS Dinamis MPM
+                      </p>
+                    </div>
+                    <div class="vr bg-neutral-30 mx-4"></div>
+                    <p class="fw-bold text-danger text-end ms-4">Not Active</p>
+                  </div>
+                </div>
+                <div class="list-group-item">
+                  <div
+                    class="d-flex align-items-center justify-content-between"
+                  >
+                    <p class="text-xs">Request Activate - 26/09/2024 • 15:00</p>
+                    <div class="d-flex align-items-center gap-2">
+                      <button
+                        class="btn btn-sm btn-danger px-3"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modalReject"
+                      >
+                        Reject
+                      </button>
+                      <button
+                        class="btn btn-sm btn-primary px-3"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modalApprove"
+                      >
+                        Approve
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div
+      class="modal fade"
+      id="modalReject"
+      tabindex="-1"
+      aria-labelledby="modalRejectLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="d-flex flex-column mb-4">
+              <h5 class="fs-5 font-bold mb-1">Reject</h5>
+              <h2 class="text-sm mb-0">Layanan QRIS Dinamis MPM</h2>
+            </div>
+            <form
+              id="reject-form"
+              action=""
+              method="POST"
+              class="form form-validation"
+              autocomplete="off"
+            >
+              <div class="form-content">
+                <div class="form-group">
+                  <label for="keterangan" class="form-label">Keterangan</label>
+                  <textarea
+                    name="keterangan"
+                    id="keterangan"
+                    class="form-control"
+                    rows="4"
+                    placeholder="Masukkan keterangan"
+                    required
+                  ></textarea>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer flex-row">
+            <button
+              class="btn btn-outline-base w-100"
+              data-bs-toggle="modal"
+              data-bs-target="#modalReject"
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              form="reject-form"
+              class="btn btn-danger w-100"
+              data-bs-toggle="modal"
+              data-bs-target="#modalSuccessReject"
+              disabled
+            >
+              Reject
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="modalApprove"
+      tabindex="-1"
+      aria-labelledby="modalApproveLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-notify">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="d-flex flex-column align-items-center py-4 gap-4">
+              <img src="../../img/ic-confirm.svg" alt="icon confirm" />
+              <div class="d-flex flex-column align-items-center gap-2">
+                <h3 class="text-neutral-100 fs-5 fw-bold mb-0">Approve</h3>
+                <p class="text-neutral-70 text-sm text-center">
+                  Aktifkan layanan
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer flex-row">
+            <button
+              class="btn btn-outline-base w-100"
+              data-bs-toggle="modal"
+              data-bs-target="#modalApprove"
+            >
+              Cancel
+            </button>
+            <button
+              class="btn btn-primary w-100"
+              data-bs-toggle="modal"
+              data-bs-target="#modalSuccess"
+            >
+              Approve
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="modalSuccess"
+      tabindex="-1"
+      aria-labelledby="modalSuccessLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content">
+          <div class="modal-body px-5 py-4">
+            <div class="d-flex flex-column align-items-center gap-4">
+              <img src="../../img/ic-success.svg" alt="icon success" />
+              <div class="d-flex flex-column align-items-center gap-2">
+                <h3
+                  id="modalSuccessTitle"
+                  class="text-neutral-100 text-center fs-7 fw-bold mb-0"
+                >
+                  Berhasil diapprove
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="modalSuccessReject"
+      tabindex="-1"
+      aria-labelledby="modalSuccessRejectLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content">
+          <div class="modal-body px-5 py-4">
+            <div class="d-flex flex-column align-items-center gap-4">
+              <img src="../../img/ic-success.svg" alt="icon success" />
+              <div class="d-flex flex-column align-items-center gap-2">
+                <h3
+                  id="modalSuccessRejectTitle"
+                  class="text-neutral-100 text-center fs-7 fw-bold mb-0"
+                >
+                  Berhasil direject
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      $(function () {
+        app.FormValidation.init("#reject-form");
+      });
+    </script>
+  </body>
+</html>

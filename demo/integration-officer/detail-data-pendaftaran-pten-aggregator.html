@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>Data Pendaftaran QRIS ke PTEN — Merchant Portal</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="../../css/styles.min.css" rel="stylesheet" />
+    <script src="../../js/app.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar-custom navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="../../img/logo-fello-merchant-black.svg"
+            alt="fello merchant logo"
+          />
+        </a>
+        <button
+          class="btn btn-link p-0"
+          data-toggle="sidebar"
+          data-target="#sidebar-dashboard"
+        >
+          <img src="../../img/ic-menu-bar.svg" alt="icon menu" />
+        </button>
+      </div>
+    </nav>
+    <aside id="sidebar-dashboard" class="sidebar">
+      <div class="sidebar-group">
+        <div class="sidebar-header">
+          <div class="header-logo">
+            <img src="../../img/logo-fello-merchant-black.svg" alt="logo" />
+          </div>
+          <div class="header-account">
+            <img
+              src="../../img/logo-brand.svg"
+              class="account-logo"
+              alt="logo brand"
+            />
+            <div class="account-content">
+              <h5 class="account-name">Operations Staff</h5>
+              <h5 class="account-id">User ID - 14440310152001</h5>
+            </div>
+          </div>
+          <div class="menu-notification">
+            <a href="notification.html" class="">
+              <div class="menu-notification-group">
+                <span class="icon-menu ic-notification"></span>
+                <span>Notifikasi</span>
+              </div>
+              <div class="menu-notification-badge">1</div>
+            </a>
+          </div>
+        </div>
+        <div class="sidebar-body">
+          <ul id="sidebarMenu" class="sidebar-menu-group">
+            <li class="menu-item">
+              <a href="home.html">
+                <span class="icon-menu ic-home"></span>
+                <span>Home</span>
+              </a>
+            </li>
+            <ul class="menu-item item-group">
+              <li class="menu-item">
+                <a href="data-merchant.html">
+                  <span class="icon-menu ic-merchant"></span>
+                  <span>Data Merchant</span>
+                </a>
+              </li>
+            </ul>
+          </ul>
+        </div>
+      </div>
+      <div class="sidebar-footer">
+        <div class="sidebar-footer-group">
+          <h5 class="account-user">Joko Hutapea</h5>
+          <span class="account-role">Integration Officer</span>
+        </div>
+        <div class="btn-group dropup">
+          <button
+            type="button"
+            class="btn"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img src="../../img/ic-dot-vertical.svg" alt="icon dot" />
+          </button>
+          <ul class="dropdown-menu dropdown-account-footer">
+            <li>
+              <a class="dropdown-item" href="user-profile.html">
+                <img src="../../img/ic-profile.svg" alt="profile" />
+                Profil Saya
+              </a>
+            </li>
+            <div class="divider"></div>
+            <li>
+              <a class="dropdown-item" href="#">
+                <img src="../../img/ic-logout-sm.svg" alt="logout" />
+                Keluar
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main bg-soft-white">
+      <div class="content">
+        <div class="content-header">
+          <h1 class="header-title">Data Pendaftaran QRIS ke PTEN</h1>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb with-arrow">
+              <li class="breadcrumb-item">
+                <a href="data-merchant.html">Data Merchant</a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="data-information-aggregator.html"
+                  >Informasi Merchant</a
+                >
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Data Pendaftaran QRIS ke PTEN
+              </li>
+            </ol>
+          </nav>
+        </div>
+        <div class="content-body">
+          <div class="card mb-4">
+            <div class="card-body">
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex flex-column">
+                  <h5 class="fs-6 font-bold mb-1">Status</h5>
+                  <h2 class="text-xs mb-0">Update - 26/09/2024 • 15:00</h2>
+                </div>
+                <p class="text-sm text-success fw-bold">Completed</p>
+              </div>
+            </div>
+          </div>
+          <div class="card card-accordion mb-4" id="detailDataPendaftaranQris">
+            <div class="card-header">
+              <div class="d-flex flex-wrap row-gap-4 mb-4">
+                <div class="d-flex flex-column flex-fill">
+                  <p class="text-neutral-100 fw-bold mb-1">
+                    Kirim data pendaftaran QRIS ke PTEN
+                  </p>
+                  <p class="text-xs text-neutral-70">
+                    Checklist data yang akan dikirim, klik generate CSV, lalu
+                    kirim ke PTEN
+                  </p>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                  <button
+                    class="btn btn-outline-warning"
+                    data-toggle="modal"
+                    data-target="#modalLoading"
+                    data-title-target="Cek Status.."
+                    data-next-target="#modalResultPTEN"
+                  >
+                    Cek Status
+                  </button>
+                  <button
+                    class="btn btn-primary"
+                    data-toggle="modal"
+                    data-target="#modalLoading"
+                    data-title-target="Generate Csv.."
+                    data-next-target="#modalGenerate"
+                  >
+                    Generate CSV
+                  </button>
+                </div>
+              </div>
+              <div class="d-flex flex-row gap-4">
+                <div class="form-group">
+                  <select
+                    name=""
+                    id=""
+                    class="form-select"
+                    data-length="tableRegisterQrisPTEN"
+                  >
+                    <option value="10">10</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                  </select>
+                </div>
+                <div class="form-group flex-fill">
+                  <input
+                    type="text"
+                    class="form-control"
+                    data-search="tableRegisterQrisPTEN"
+                    placeholder="Cari disini"
+                  />
+                </div>
+                <div class="form-group">
+                  <div class="input-append append-right">
+                    <input
+                      type="text"
+                      name="date"
+                      class="form-control"
+                      placeholder="Masukkan tanggal"
+                      data-toggle="daterange"
+                      data-search-date="tableRegisterQrisPTEN"
+                      data-search-index="2"
+                    />
+                    <div class="append-icon icon-calendar"></div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <select
+                    name=""
+                    id=""
+                    class="form-select"
+                    data-search-status="tableRegisterQrisPTEN"
+                    data-search-index="3"
+                  >
+                    <option value="">Semua</option>
+                    <option value="process">Process</option>
+                    <option value="unprocessed">Unprocessed</option>
+                    <option value="done">Done</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="card-body p-0">
+              <table
+                id="tableRegisterQrisPTEN"
+                class="table table-hover nowrap mb-0"
+                width="100%"
+              >
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>No</th>
+                    <th>Last Action Date</th>
+                    <th>Status Pendaftaran PTEN</th>
+                    <th>NMID</th>
+                    <th>Jenis Bisnis</th>
+                    <th>Nama Merchant</th>
+                    <th>Merchant ID</th>
+                    <th>MPAN</th>
+                    <th>Brand ID</th>
+                    <th>Nama</th>
+                    <th>No. Handphone</th>
+                    <th>Email</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>322</td>
+                    <td></td>
+                    <td>19/09/2024 • 13:22</td>
+                    <td>
+                      <span
+                        class="dt-status status-privilage mw-auto text-neutral-100"
+                      >
+                        Unprocessed
+                      </span>
+                    </td>
+                    <td>-</td>
+                    <td>Badan Usaha</td>
+                    <td>Fellopay</td>
+                    <td>11125308</td>
+                    <td>9360082769111275376</td>
+                    <td>1819220041864</td>
+                    <td>Samantha Putri</td>
+                    <td>08123457890</td>
+                    <td>samanthaputri@gmail.com</td>
+                  </tr>
+                  <tr>
+                    <td>323</td>
+                    <td></td>
+                    <td>19/09/2024 • 13:22</td>
+                    <td>
+                      <span
+                        class="dt-status status-privilage mw-auto text-neutral-100"
+                      >
+                        Unprocessed
+                      </span>
+                    </td>
+                    <td>-</td>
+                    <td>Badan Usaha</td>
+                    <td>Fellopay</td>
+                    <td>11125308</td>
+                    <td>9360082769111275376</td>
+                    <td>1819220041864</td>
+                    <td>Samantha Putri</td>
+                    <td>08123457890</td>
+                    <td>samanthaputri@gmail.com</td>
+                  </tr>
+                  <tr>
+                    <td>324</td>
+                    <td></td>
+                    <td>19/09/2024 • 13:22</td>
+                    <td>
+                      <span
+                        class="dt-status status-privilage mw-auto text-success"
+                      >
+                        Done
+                      </span>
+                    </td>
+                    <td>-</td>
+                    <td>Badan Usaha</td>
+                    <td>Fellopay</td>
+                    <td>11125308</td>
+                    <td>9360082769111275376</td>
+                    <td>1819220041864</td>
+                    <td>Samantha Putri</td>
+                    <td>08123457890</td>
+                    <td>samanthaputri@gmail.com</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div
+      class="modal fade"
+      id="modalLoading"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="modalLoadingLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-fit">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="d-flex flex-column align-items-center gap-4 px-2 pt-2">
+              <span class="spinner-progress"></span>
+              <h3
+                id="modalLoadingTitle"
+                class="text-neutral-100 fs-7 fw-bold mb-0"
+              >
+                Generate Csv...
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="modalSuccess"
+      tabindex="-1"
+      aria-labelledby="modalSuccessLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-fit">
+        <div class="modal-content">
+          <div class="modal-body px-5 py-4">
+            <div class="d-flex flex-column align-items-center gap-4">
+              <img src="../../img/ic-success.svg" alt="icon success" />
+              <div class="d-flex flex-column align-items-center gap-2">
+                <h3
+                  id="modalSuccessTitle"
+                  class="text-neutral-100 fs-7 fw-bold mb-0"
+                >
+                  Data Berhasil
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="modalGenerate"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="modalGenerateLabel"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">File Csv</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="send-csv-form" action="" method="POST" autocomplete="off">
+              <div class="form-content">
+                <div class="form-group form-preview">
+                  <label for="filePendaftaranPTEN" class="input-file-box">
+                    <span class="input-csv-preview"></span>
+                    <div class="input-file-detail">
+                      <h3 class="file-detail-title">
+                        File Pendaftaran ke PTEN.csv
+                      </h3>
+                      <p class="text-neutral-70 file-detail-subtitle">100kb</p>
+                    </div>
+                    <input
+                      type="file"
+                      id="filePendaftaranPTEN"
+                      name="filePendaftaranPTEN"
+                      class="d-none"
+                      accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+                      value=""
+                      required
+                      disabled
+                    />
+                  </label>
+                  <div class="form-feedback"></div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="submit"
+              form="send-csv-form"
+              class="btn btn-primary w-100"
+              data-bs-dismiss="modal"
+            >
+              Kirim Data ke PTEN
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="modalResultPTEN"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="modalResultPTENLabel"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">File Hasil Pendaftaran</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form
+              id="update-merchant-form"
+              action=""
+              method="POST"
+              autocomplete="off"
+            >
+              <div class="form-content">
+                <div class="form-group form-preview">
+                  <label for="filePendaftaranPTEN" class="input-file-box">
+                    <div class="d-flex flex-column gap-2 flex-fill">
+                      <div class="d-flex flex-row gap-3">
+                        <span class="input-zip-preview"></span>
+                        <div class="input-file-detail">
+                          <h3 class="file-detail-title">QRIS_NMR.zip</h3>
+                          <p class="text-neutral-70 file-detail-subtitle">
+                            100kb
+                          </p>
+                        </div>
+                      </div>
+                      <div class="d-flex flex-row gap-3">
+                        <span class="input-xls-preview"></span>
+                        <div class="input-file-detail">
+                          <h3 class="file-detail-title">NMID_QRIS_NMR.xlxs</h3>
+                          <p class="text-neutral-70 file-detail-subtitle">
+                            100kb
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <button
+                      id="downloadResult"
+                      type="button"
+                      class="btn btn-sm btn-flex bg-white"
+                      data-target="update-merchant-form"
+                    >
+                      Download
+                    </button>
+                  </label>
+                  <div class="form-feedback"></div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="submit"
+              form="update-merchant-form"
+              class="btn btn-primary w-100"
+              data-bs-dismiss="modal"
+              disabled
+            >
+              Update Data Merchant
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      $(function () {
+        let tableRegisterQrisPTEN = $("#tableRegisterQrisPTEN").DataTable({
+          dom: '<"dataTables_top">rt<"dataTables_bottom"ip><"clear">',
+          columnDefs: [
+            {
+              orderable: false,
+              targets: 0,
+              checkboxes: {
+                selectRow: true,
+              },
+              render: function (data, type, row, meta) {
+                if (type === "display") {
+                  let isAddCheckbox = row.some((item) => {
+                    let text = app.stripHtmlTags(item).toLowerCase();
+                    return (
+                      text.includes("unprocessed") || text.includes("rejected")
+                    );
+                  });
+
+                  data = `<div class="checkbox"><input type="checkbox" name="merchant_id[]" class="dt-checkboxes ${
+                    isAddCheckbox ? "" : "d-none disabled"
+                  }" value="${data}"></div>`;
+                }
+
+                return data;
+              },
+              createdCell: function (td, cellData, rowData, row, col) {
+                let isAddCheckbox = rowData.some((item) => {
+                  let text = app.stripHtmlTags(item).toLowerCase();
+                  return (
+                    text.includes("unprocessed") || text.includes("rejected")
+                  );
+                });
+
+                if (!isAddCheckbox) {
+                  setTimeout(() => {
+                    this.api().cell(td).checkboxes.disable();
+                  }, 200);
+                }
+              },
+            },
+          ],
+          select: {
+            style: "multi",
+            info: false,
+          },
+        });
+
+        tableRegisterQrisPTEN
+          .on("order.dt search.dt", function () {
+            let i = 1;
+
+            tableRegisterQrisPTEN
+              .cells(null, 1, {
+                search: "applied",
+                order: "applied",
+              })
+              .every(function (cell) {
+                this.data(i++);
+              });
+          })
+          .draw();
+
+        app.CustomFilterDT.init();
+
+        $('[data-toggle="modal"]').on("click", function () {
+          const target = $(this).attr("data-target");
+          const titleTarget = $(this).attr("data-title-target");
+          const nextTarget = $(this).attr("data-next-target");
+          const modalLoadingGenerate = new bootstrap.Modal(target);
+          const modalGenerate = new bootstrap.Modal(nextTarget);
+
+          $(target).find("#modalLoadingTitle").text(titleTarget);
+          modalLoadingGenerate.show();
+
+          setTimeout(() => {
+            modalLoadingGenerate.hide();
+            modalGenerate.show();
+          }, 3000);
+        });
+
+        $("#downloadResult").on("click", function () {
+          const target = $(this).attr("data-target");
+
+          $(`.btn[form=${target}]`).prop("disabled", false);
+        });
+
+        $("#send-csv-form").on("submit", function (e) {
+          e.preventDefault();
+
+          const modalSuccess = new bootstrap.Modal("#modalSuccess");
+
+          $("#modalSuccess")
+            .find("#modalSuccessTitle")
+            .text("Data Berhasil Dikirim");
+          modalSuccess.show();
+        });
+
+        $("#update-merchant-form").on("submit", function (e) {
+          e.preventDefault();
+
+          const modalSuccess = new bootstrap.Modal("#modalSuccess");
+
+          $("#modalSuccess")
+            .find("#modalSuccessTitle")
+            .text("Data Berhasil Diupdate");
+          modalSuccess.show();
+        });
+      });
+    </script>
+  </body>
+</html>
