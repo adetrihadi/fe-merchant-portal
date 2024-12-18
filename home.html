@@ -201,10 +201,15 @@
             </li>
             <div class="divider"></div>
             <li>
-              <a class="dropdown-item" href="#">
+              <button
+                type="button"
+                class="dropdown-item"
+                data-bs-toggle="modal"
+                data-bs-target="#modalLogout"
+              >
                 <img src="img/ic-logout-sm.svg" alt="logout" />
                 Keluar
-              </a>
+              </button>
             </li>
           </ul>
         </div>
@@ -231,5 +236,40 @@
         </div>
       </div>
     </main>
+
+    <div
+      class="modal fade"
+      id="modalLogout"
+      tabindex="-1"
+      aria-labelledby="modalLogoutLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-notify">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="d-flex flex-column align-items-center py-4 gap-4">
+              <img src="img/ic-logout.svg" alt="icon logout" />
+              <div class="d-flex flex-column align-items-center gap-2">
+                <h3 class="text-neutral-100 fs-5 fw-bold mb-0">
+                  Ingin Keluar?
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer flex-row">
+            <button
+              class="btn btn-outline-base w-100"
+              data-bs-toggle="modal"
+              data-bs-target="#modalLogout"
+            >
+              Batalkan
+            </button>
+            <button class="btn btn-danger w-100" data-bs-dismiss="modal">
+              Ya, Keluar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
